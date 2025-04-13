@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_project/repository/Widgets/uiHelper.dart';
+import 'package:ui_project/repository/screens/bottomNav/bottomNavScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -54,7 +55,14 @@ class LoginScreen extends StatelessWidget {
                       height: 48,
                       width: 295,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BottomNavScreen(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0XFFE23744),
                           shape: RoundedRectangleBorder(
@@ -84,8 +92,13 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontSize: 10,
                     ),
-                    SizedBox(height: 20,),
-                    UiHelper.CustomeText(text: "or login with phone number", color: Color(0XFF269237), fontWeight: FontWeight.w400, fontSize: 14)
+                    SizedBox(height: 20),
+                    UiHelper.CustomeText(
+                      text: "or login with phone number",
+                      color: Color(0XFF269237),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                    ),
                   ],
                 ),
               ),
